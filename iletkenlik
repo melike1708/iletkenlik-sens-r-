@@ -1,0 +1,23 @@
+import random
+import time
+
+def simulate_conductivity_sensor():
+    # İletkenlik seviyesi 0 ile 30 mS arasında rastgele bir değer oluştur.
+    conductivity_level = round(random.uniform(0, 30), 2)  # 0 to 30 mS
+    return conductivity_level
+
+try:
+    while True:
+        # İletkenlik sensörünün simülasyonunu yap.
+        simulated_conductivity_level = simulate_conductivity_sensor()
+
+        # Simüle edilen iletkenlik değerini yazdır.
+        print(f"Simulated Conductivity Level: {simulated_conductivity_level} mS")
+
+        # 1 saniye bekle.
+        time.sleep(1)
+
+except KeyboardInterrupt:
+    print("Simülasyon durduruldu.")
+except Exception as e:
+    print(f"Bir hata oluştu: {e}")
